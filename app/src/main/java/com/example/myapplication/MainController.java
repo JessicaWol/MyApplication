@@ -7,9 +7,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.util.List;
+import retrofit2.Callback;
 
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -33,9 +33,9 @@ public class MainController {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        RestProductsApi restProductsApi = retrofit.create(RestProductsApi.class);
+        RestProductsApi restApi = retrofit.create(RestProductsApi.class);
 
-        Call<RestProductsResponse> call = restProductsApi.getProduits();
+        Call<RestProductsResponse> call = restApi.getProduits();
         call.enqueue(new Callback<RestProductsResponse>() {
             @Override
             public void onResponse(Call<RestProductsResponse> call, Response<RestProductsResponse> response) {
@@ -51,5 +51,8 @@ public class MainController {
         });
     }
 }
+
+
+
 
 

@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
     private List<products> listValues;
-    private final OnclickProduct Click;
+   private final OnclickProduct Click;
 
 
     public class CelluleJava extends RecyclerView.ViewHolder {
@@ -55,7 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
     }
 
     @Override
-    public void onBindViewHolder(CelluleJava holder, final int position) {
+    public void onBindViewHolder(final CelluleJava holder, final int position) {
 
         final products currentproducts = listValues.get(position);
         final String name = currentproducts.getName();
@@ -64,11 +65,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //remove(position);
                 Click.Onclick(currentproducts);
             }
         });
 
-        holder.txtFooter.setText("name: " + name);
+       holder.txtFooter.setText("name: " + name);
     }
 
     @Override
