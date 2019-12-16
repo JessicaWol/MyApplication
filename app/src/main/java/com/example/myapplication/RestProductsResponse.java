@@ -4,13 +4,13 @@ import java.util.List;
 
 public class RestProductsResponse {
 
-    private List<products> produits;
+    private List<Products> produits;
 
-    public List<products> getProduits() {
+    public List<Products> getProduits() {
         return produits;
     }
 
-    public void setProduits(List<products> produits) {
+    public void setProduits(List<Products> produits) {
         this.produits = produits;
     }
 }

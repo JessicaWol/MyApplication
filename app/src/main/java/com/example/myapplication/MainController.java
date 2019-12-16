@@ -35,18 +35,17 @@ public class MainController {
 
         RestProductsApi restApi = retrofit.create(RestProductsApi.class);
 
-        Call<RestProductsResponse> call = restApi.getProduits();
-        call.enqueue(new Callback<RestProductsResponse>() {
+        Call<List<Products>> call = restApi.getProduits();
+        call.enqueue(new Callback<List<Products>>() {
             @Override
-            public void onResponse(Call<RestProductsResponse> call, Response<RestProductsResponse> response) {
-                RestProductsResponse restResponse = response.body();
-                List<products> list = restResponse.getProduits();
+            public void onResponse(Call<List<Products>> call, Response<List<Products>> response) {
+                List<Products> list = response.body();
                 activity.showList(list);
             }
 
             @Override
-            public void onFailure(Call<RestProductsResponse> call, Throwable t) {
-                Log.d("ERROR", "Api Error");
+            public void onFailure(Call<List<Products>> call, Throwable t) {
+                Log.d("ERROR", "Api Error =" + t.getMessage());
             }
         });
     }

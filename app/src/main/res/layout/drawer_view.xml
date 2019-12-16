@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.ActionMenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Notifications" />
+
+        <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_view_list_black_24dp"
+            android:title="List" />
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/ic_favorite_border_black_24dp"
+            android:title="Favorite" />
+
+    </group>
+    <item android:title="Sub items">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:icon="@drawable/ic_dashboard"
+                    android:title="Sub item 1" />
+                <item
+                    android:icon="@drawable/ic_forum"
+                    android:title="Sub item 2" />
+            </group>
+        </menu>
+    </item>
+</androidx.appcompat.widget.ActionMenuView>
+

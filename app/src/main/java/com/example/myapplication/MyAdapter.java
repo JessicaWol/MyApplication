@@ -1,9 +1,8 @@
 package com.example.myapplication;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
-    private List<products> listValues;
+    private List<Products> listValues;
    private final OnclickProduct Click;
 
 
@@ -31,19 +30,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
         }
     }
 
-    public void add(int position, products item) {
+    public void add(int position, Products item) {
         listValues.add(position, item);
         notifyItemInserted(position);
     }
-
     public void remove(int position) {
         listValues.remove(position);
         notifyItemRemoved(position);
 
     }
-    public MyAdapter(List<products> listValues, OnclickProduct Click) {
-        this.listValues = listValues;
-        this.Click = Click;
+    public MyAdapter(List<Products> Values, OnclickProduct On) {
+        listValues = Values;
+        Click = On;
 
     }
 
@@ -56,17 +54,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
     }
 
     @Override
-    public void onBindViewHolder(final CelluleJava holder, final int position) {
+    public void onBindViewHolder(CelluleJava holder, final int position) {
 
-        final products currentproducts = listValues.get(position);
-        final String name = currentproducts.getName();
+        //final Products currentproducts = listValues.get(position);
+        //final String name = currentproducts.getName();
+
+        final String name = listValues.get(position).getName();
+
         holder.txtHeader.setText(name);
 
        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //remove(position);
-                Click.Onclick(currentproducts);
+                Click.Onclick(listValues.get(position));
             }
         });
 
