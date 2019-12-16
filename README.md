@@ -18,6 +18,9 @@ Premier écran
 Mon premier écran me sert d'ecran d'accueil.Je présente l'application avec une liste d'item et un bouton de navigation qui me permet de me rediriger sur les fragments favories et notifications.
 
 
+![image1](https://user-images.githubusercontent.com/45657174/70948163-20a4b780-205b-11ea-9b5d-ada800f53b32.PNG)
+
+
 Deuxième écran
 
 Mon deuxième écran affiche ma RecyclerView.Il s'agit ici d'une d'image, avec un petit Toast contenant le nom de l'item.
