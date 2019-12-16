@@ -1,8 +1,10 @@
-package com.example.myapplication;
+package com.example.myapplication.Controller;
 
 
 import android.util.Log;
 
+import com.example.myapplication.View.MainActivity;
+import com.example.myapplication.Model.Products;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

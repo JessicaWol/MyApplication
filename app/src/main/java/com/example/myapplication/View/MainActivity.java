@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.View;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,12 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.widget.Toast;
+
+import com.example.myapplication.Controller.MainController;
+import com.example.myapplication.Controller.OnclickProduct;
+import com.example.myapplication.Model.MyAdapter;
+import com.example.myapplication.Model.Products;
+import com.example.myapplication.R;
 
 import java.util.List;
 
